@@ -1,12 +1,10 @@
 version: '3'
 services:
   ftp_server:
-    image: stilliard/pure-ftpd:latest
+    build: .
     container_name: ftp_server
     ports: 
       - "21:21"
       - "30000-30009:30000-30009"
     environment:
-      - FTP_USER_NAME="test"
-      - FTP_USER_PASS="test123"
-      - FTP_USER_HOME="/home/ftpusers/test"
+      - PUBLICHOST="localhost"
